@@ -537,6 +537,193 @@ footer span{color:var(--dorado)}
   </div>
 </section>
 
+  <!-- ASESOR CONTABLE -->
+<section id="asesor" style="background:linear-gradient(135deg,#0B1929,#1A3A5C);padding:80px 2rem">
+  <div style="max-width:1060px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:rgba(201,151,63,.8);text-transform:uppercase;margin-bottom:10px">Inteligencia artificial contable</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:14px">Asesor Contable Express</h2>
+      <p style="font-size:15px;color:rgba(176,200,232,.8);max-width:560px;margin:0 auto;line-height:1.7">Respuestas profesionales sobre contabilidad, impuestos y tributación dominicana. Pruebe <strong style="color:#C9973F">5 preguntas gratis</strong>.</p>
+    </div>
+    <div style="max-width:720px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid rgba(201,151,63,.2);border-radius:20px;overflow:hidden;height:580px;display:flex;flex-direction:column">
+      <div style="display:flex;border-bottom:1px solid rgba(255,255,255,.08)">
+        <button onclick="asesorTab('inicio',this)" id="tab-inicio" style="flex:1;padding:12px;background:none;border:none;color:#C9973F;font-size:12px;font-weight:700;cursor:pointer;border-bottom:2px solid #C9973F;text-transform:uppercase;letter-spacing:.06em;font-family:inherit">🏠 Inicio</button>
+        <button onclick="asesorTab('chat',this)" id="tab-chat" style="flex:1;padding:12px;background:none;border:none;color:rgba(176,200,232,.5);font-size:12px;font-weight:700;cursor:pointer;border-bottom:2px solid transparent;text-transform:uppercase;letter-spacing:.06em;font-family:inherit">💬 Chat</button>
+      </div>
+      <div id="asesor-inicio" style="flex:1;overflow-y:auto;padding:16px">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(201,151,63,.2);border-radius:14px;padding:14px;margin-bottom:14px;text-align:center">
+          <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+            <span style="background:rgba(201,151,63,.15);border:1px solid rgba(201,151,63,.3);border-radius:999px;padding:4px 12px;font-size:11px;color:#C9973F;font-weight:600">⭐ +15 años de experiencia</span>
+            <span style="background:rgba(201,151,63,.15);border:1px solid rgba(201,151,63,.3);border-radius:999px;padding:4px 12px;font-size:11px;color:#C9973F;font-weight:600">🏛️ Especialista DGII · ICPARD</span>
+            <span style="background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:999px;padding:4px 12px;font-size:11px;color:#25D366;font-weight:600" id="asesor-gratis-badge">🟢 5 preguntas gratis</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px" id="asesor-cats">
+          <button onclick="asesorFiltrar('todos',this)" style="background:linear-gradient(135deg,#B8913A,#D4A84B);color:#fff;border:none;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">✦ Todos</button>
+          <button onclick="asesorFiltrar('formalizacion',this)" style="background:rgba(255,255,255,.07);color:rgba(176,200,232,.8);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">🏢 Formalización</button>
+          <button onclick="asesorFiltrar('impuestos',this)" style="background:rgba(255,255,255,.07);color:rgba(176,200,232,.8);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">🏛️ Impuestos</button>
+          <button onclick="asesorFiltrar('nomina',this)" style="background:rgba(255,255,255,.07);color:rgba(176,200,232,.8);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">👥 Nómina</button>
+          <button onclick="asesorFiltrar('contabilidad',this)" style="background:rgba(255,255,255,.07);color:rgba(176,200,232,.8);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">📊 Contabilidad</button>
+          <button onclick="asesorFiltrar('clientes',this)" style="background:rgba(255,255,255,.07);color:rgba(176,200,232,.8);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">🤝 Clientes</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px" id="asesor-pqs"></div>
+        <div id="asesor-planes" style="margin-top:16px">
+          <div style="font-size:11px;font-weight:700;color:rgba(176,200,232,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">💎 Planes de acceso ilimitado</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;text-align:center">
+              <div style="font-size:18px;margin-bottom:6px">⚡</div>
+              <div style="font-size:12px;font-weight:700;color:rgba(176,200,232,.9);margin-bottom:3px">Básico</div>
+              <div style="font-size:18px;font-weight:700;color:#C9973F;margin-bottom:3px">RD$500</div>
+              <div style="font-size:10px;color:rgba(176,200,232,.5);margin-bottom:8px">10 preguntas · 30 días</div>
+              <button onclick="asesorContratar('Básico',10)" style="width:100%;padding:6px;background:#C9973F;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Contratar →</button>
+            </div>
+            <div style="background:linear-gradient(135deg,#C9973F,#A07828);border-radius:12px;padding:12px;text-align:center;position:relative">
+              <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#fff;color:#C9973F;font-size:9px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap">MÁS POPULAR</div>
+              <div style="font-size:18px;margin-bottom:6px">⭐</div>
+              <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px">Profesional</div>
+              <div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:3px">RD$1,500</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.8);margin-bottom:8px">Ilimitado · 30 días</div>
+              <button onclick="asesorContratar('Profesional',999)" style="width:100%;padding:6px;background:rgba(255,255,255,.25);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Contratar →</button>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;text-align:center">
+              <div style="font-size:18px;margin-bottom:6px">🏢</div>
+              <div style="font-size:12px;font-weight:700;color:rgba(176,200,232,.9);margin-bottom:3px">Empresarial</div>
+              <div style="font-size:18px;font-weight:700;color:#C9973F;margin-bottom:3px">RD$3,500</div>
+              <div style="font-size:10px;color:rgba(176,200,232,.5);margin-bottom:8px">Ilimitado · 90 días</div>
+              <button onclick="asesorContratar('Empresarial',999)" style="width:100%;padding:6px;background:#C9973F;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Contratar →</button>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:11px;color:rgba(176,200,232,.4);margin-top:8px">Pago por WhatsApp · 📱 829-786-0922</div>
+        </div>
+      </div>
+      <div id="asesor-chat" style="display:none;flex:1;overflow-y:auto;padding:16px;flex-direction:column;gap:10px">
+        <div id="asesor-empty" style="text-align:center;padding:30px;color:rgba(176,200,232,.4);font-size:13px">
+          <div style="font-size:28px;margin-bottom:8px">💬</div>Escriba su pregunta o elija una del inicio.
+        </div>
+      </div>
+      <div style="padding:4px 12px;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.06)">
+        <span id="asesor-contador" style="font-size:11px;color:rgba(201,151,63,.8);font-weight:600">⚡ 5 preguntas gratis</span>
+        <span style="font-size:11px;color:rgba(176,200,232,.4)">📱 829-786-0922</span>
+      </div>
+      <div style="padding:10px 12px;display:flex;gap:8px;align-items:center">
+        <input id="asesor-inp" placeholder="Escribe tu pregunta contable..." onkeydown="if(event.key==='Enter')asesorEnviar()" style="flex:1;padding:10px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:13px;color:#fff;font-family:inherit;outline:none">
+        <button onclick="asesorEnviar()" id="asesor-sbtn" style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#C9973F,#A07828);color:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0">➤</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+var aGratis=5,aPlan=null,aPlanQ=0,aCargando=false;
+var APQS=[
+  {c:"formalizacion",t:"¿Cómo constituir una SRL en RD?"},
+  {c:"formalizacion",t:"¿Cuánto cuesta constituir una empresa?"},
+  {c:"formalizacion",t:"¿Cómo registrar un negocio en la DGII?"},
+  {c:"formalizacion",t:"¿Qué es el RNC y cómo se obtiene?"},
+  {c:"impuestos",t:"¿Qué es el ITBIS y cuándo se paga?"},
+  {c:"impuestos",t:"¿Cómo se declara el ITBIS (IT-1)?"},
+  {c:"impuestos",t:"¿Qué es el IR-17?"},
+  {c:"impuestos",t:"¿Qué es el IR-2 y quién lo presenta?"},
+  {c:"impuestos",t:"¿Qué es el IR-3?"},
+  {c:"impuestos",t:"¿Cómo se hace el reporte 606?"},
+  {c:"impuestos",t:"¿Cómo se hace el reporte 607?"},
+  {c:"impuestos",t:"¿Qué gastos son deducibles del ISR?"},
+  {c:"nomina",t:"¿Cómo se calcula la TSS?"},
+  {c:"nomina",t:"¿Cómo calcular la regalía pascual?"},
+  {c:"nomina",t:"¿Cómo calcular la liquidación?"},
+  {c:"contabilidad",t:"¿Cómo hacer una conciliación bancaria?"},
+  {c:"contabilidad",t:"¿Cómo leer un balance general?"},
+  {c:"clientes",t:"¿Cómo cotizar una iguala mensual?"},
+  {c:"clientes",t:"¿Cómo prepararse para visitar un cliente?"},
+];
+var ARESP={
+  "srl":"<strong>¿Cómo constituir una SRL en RD?</strong><br><br>Una SRL es la forma jurídica más común para pequeños y medianos negocios.<br><br><strong>📋 Pasos:</strong><br>1. Elaborar estatutos con un abogado<br>2. Depositar capital mínimo (RD$100,000)<br>3. Registrar en la Cámara de Comercio<br>4. Obtener RNC en la DGII<br>5. Registrar en TSS si tendrá empleados<br><br><strong>💡 Ejemplo:</strong> Usted y un socio abren una ferretería, cada uno aporta RD$50,000. La empresa responde con ese capital, no con sus bienes personales.<br><br><strong>💰 Costo:</strong> RD$15,000–RD$25,000<br><br><strong>🌐 Trámites:</strong><br>• Cámara de Comercio: <a href='https://www.camarasantodomingo.do' target='_blank' style='color:#C9973F'>camarasantodomingo.do</a><br>• DGII: <a href='https://www.dgii.gov.do' target='_blank' style='color:#C9973F'>dgii.gov.do</a><br>• TSS: <a href='https://www.tss.gob.do' target='_blank' style='color:#C9973F'>tss.gob.do</a><br><br>📱 <strong>829-786-0922</strong>",
+  "itbis":"<strong>¿Qué es el ITBIS?</strong><br><br>Impuesto sobre Transferencias de Bienes y Servicios. Equivalente al IVA. Tasa: <strong>18%</strong>. Se declara mensualmente con el IT-1 antes del día 20.<br><br><strong>💡 Ejemplo:</strong><br>Vende RD$100,000 → cobra RD$118,000<br>Compró con ITBIS: RD$5,000<br>Paga a DGII: RD$18,000 - RD$5,000 = <strong>RD$13,000</strong><br><br>🌐 <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a>",
+  "ir17":"<strong>¿Qué es el IR-17?</strong><br><br>Pagos a cuenta mensuales del ISR. Se paga el <strong>1.5% de los ingresos brutos</strong> antes del día 20.<br><br><strong>💡 Ejemplo:</strong><br>Ingresos enero: RD$500,000 × 1.5% = <strong>RD$7,500</strong><br>Se acredita contra el ISR anual.<br><br>🌐 <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a>",
+  "ir2":"<strong>¿Qué es el IR-2?</strong><br><br>Declaración anual del ISR para personas físicas con negocio. Fecha límite: <strong>31 de marzo</strong>.<br><br><strong>💡 Ejemplo:</strong> Médico que facturó RD$2,000,000 presenta su IR-2 antes del 31 de marzo declarando ingresos y gastos deducibles.<br><br>🌐 <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a>",
+  "ir3":"<strong>¿Qué es el IR-3?</strong><br><br>Declaración anual del ISR para sociedades (SRL, SA). Fecha límite: <strong>120 días después del cierre fiscal</strong>.<br><br><strong>💡 Ejemplo:</strong><br>Ingresos: RD$5,000,000 - Gastos: RD$3,500,000<br>Base: RD$1,500,000 × 27% = <strong>RD$405,000 de ISR</strong><br><br>🌐 <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a>",
+  "tss":"<strong>¿Cómo se calcula la TSS?</strong><br><br><strong>Empleador:</strong> 14.19% | <strong>Empleado:</strong> 5.91%<br><br><strong>💡 Ejemplo (salario RD$30,000):</strong><br>• Empleador paga: RD$4,257<br>• Empleado descuento: RD$1,773<br><br>🌐 <a href='https://www.tss.gob.do' target='_blank' style='color:#C9973F'>tss.gob.do</a>",
+  "regalia":"<strong>¿Cómo calcular la regalía pascual?</strong><br><br>Equivale a <strong>1/12 del salario anual</strong>. Se paga antes del 20 de diciembre.<br><br><strong>💡 Ejemplo:</strong><br>Salario RD$25,000/mes → Regalía = <strong>RD$25,000</strong><br>Si trabajó 6 meses → <strong>RD$12,500</strong>",
+  "liquidacion":"<strong>¿Cómo calcular la liquidación?</strong><br><br>Incluye: preaviso + cesantía + vacaciones + regalía proporcional.<br><br><strong>💡 Ejemplo (3 años, RD$30,000/mes):</strong><br>• Preaviso: RD$28,000<br>• Cesantía: RD$21,000<br>• Vacaciones: RD$14,000<br>• Regalía: RD$15,000<br>• <strong>Total: RD$78,000</strong><br><br>🌐 <a href='https://www.mt.gob.do' target='_blank' style='color:#C9973F'>mt.gob.do</a>",
+  "606":"<strong>Reporte 606 — Compras y gastos</strong><br><br>Reporte mensual de todas las compras. Fecha límite: día 15 del mes siguiente.<br><br>Incluye: proveedor, NCF/e-CF, monto e ITBIS pagado.<br><br>🌐 <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a>",
+  "607":"<strong>Reporte 607 — Ventas e ingresos</strong><br><br>Reporte mensual de todas las ventas. Fecha límite: día 15 del mes siguiente.<br><br>Incluye: comprobantes emitidos, monto e ITBIS cobrado.<br><br>🌐 <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a>",
+  "balance":"<strong>¿Cómo leer un balance general?</strong><br><br><strong>ACTIVOS</strong> = lo que tiene | <strong>PASIVOS</strong> = lo que debe<br><strong>PATRIMONIO</strong> = Activos - Pasivos<br><br><strong>💡 Ejemplo:</strong><br>Activos: RD$500,000 - Pasivos: RD$200,000<br>Patrimonio: <strong>RD$300,000</strong> ← valor real de la empresa",
+  "conciliacion":"<strong>¿Cómo hacer una conciliación bancaria?</strong><br><br><strong>Pasos:</strong><br>1. Obtener estado de cuenta bancario<br>2. Comparar con registros contables<br>3. Identificar diferencias<br>4. Ajustar y cuadrar<br><br><strong>💡 Ejemplo:</strong><br>Saldo banco: RD$150,000<br>(-) Cheque pendiente: RD$10,000<br>(+) Depósito en tránsito: RD$5,000<br>Saldo ajustado: <strong>RD$145,000 ✅</strong>",
+  "iguala":"<strong>¿Cómo cotizar una iguala mensual?</strong><br><br><strong>Referencia de mercado RD:</strong><br>• Negocio pequeño sin empleados: <strong>RD$8,500/mes</strong><br>• Con 1-5 empleados: <strong>RD$8,500/mes</strong><br>• 6-15 empleados: <strong>RD$12,000/mes</strong><br>• Grande / Call Center: <strong>RD$15,000+/mes</strong><br><br>📱 Diagnóstico gratuito: <strong>829-786-0922</strong>",
+  "visita":"<strong>¿Cómo prepararse para visitar un cliente?</strong><br><br><strong>Preguntas clave:</strong><br>1. ¿Tiene RNC activo?<br>2. ¿Está al día con la DGII?<br>3. ¿Cuántos empleados tiene?<br>4. ¿Declara ITBIS mensualmente?<br>5. ¿Ha recibido requerimientos de la DGII?<br>6. ¿Cuántos meses tiene sin declarar?<br><br><strong>💡 Consejo:</strong> No mencione precios en la primera visita.<br><br>📱 <strong>829-786-0922</strong>",
+  "default":"Gracias por su consulta. Para una respuesta detallada:<br><br>📱 WhatsApp: <strong>829-786-0922</strong><br>📧 <strong>raquelandujarcpa@outlook.com</strong><br>📋 <a href='https://raquelandujarcpa.github.io/encuesta-contable' target='_blank' style='color:#C9973F'>Llenar formulario de levantamiento</a><br><br><strong>🌐 Recursos oficiales:</strong><br>• <a href='https://www.dgii.gov.do' target='_blank' style='color:#C9973F'>dgii.gov.do</a><br>• <a href='https://oficinavirtual.dgii.gov.do' target='_blank' style='color:#C9973F'>oficinavirtual.dgii.gov.do</a><br>• <a href='https://www.tss.gob.do' target='_blank' style='color:#C9973F'>tss.gob.do</a><br><br>Primera consulta <strong>gratis</strong>. 💼"
+};
+function aBuscar(txt){
+  var t=txt.toLowerCase();
+  if(t.includes('srl')||t.includes('constituir')||t.includes('empresa')||t.includes('sociedad')) return ARESP.srl;
+  if(t.includes('itbis')||t.includes('it-1')||t.includes('iva')) return ARESP.itbis;
+  if(t.includes('ir-17')||t.includes('ir17')||t.includes('pago a cuenta')) return ARESP.ir17;
+  if(t.includes('ir-2')||t.includes('ir2')||t.includes('persona física')) return ARESP.ir2;
+  if(t.includes('ir-3')||t.includes('ir3')) return ARESP.ir3;
+  if(t.includes('tss')||t.includes('seguro')||t.includes('pensión')) return ARESP.tss;
+  if(t.includes('regalía')||t.includes('pascual')||t.includes('navidad')) return ARESP.regalia;
+  if(t.includes('liquidación')||t.includes('cesantía')||t.includes('preaviso')) return ARESP.liquidacion;
+  if(t.includes('606')) return ARESP['606'];
+  if(t.includes('607')) return ARESP['607'];
+  if(t.includes('balance')||t.includes('estado financiero')) return ARESP.balance;
+  if(t.includes('conciliación')||t.includes('bancaria')) return ARESP.conciliacion;
+  if(t.includes('iguala')||t.includes('cotizar')||t.includes('cobrar')) return ARESP.iguala;
+  if(t.includes('visita')||t.includes('cliente')) return ARESP.visita;
+  return ARESP.default;
+}
+function asesorTab(v,btn){
+  document.querySelectorAll('#tab-inicio,#tab-chat').forEach(function(b){b.style.color='rgba(176,200,232,.5)';b.style.borderBottomColor='transparent';});
+  btn.style.color='#C9973F';btn.style.borderBottomColor='#C9973F';
+  document.getElementById('asesor-inicio').style.display=v==='inicio'?'block':'none';
+  var c=document.getElementById('asesor-chat');c.style.display=v==='chat'?'flex':'none';
+}
+function asesorFiltrar(cat,btn){
+  document.querySelectorAll('#asesor-cats button').forEach(function(b){b.style.background='rgba(255,255,255,.07)';b.style.color='rgba(176,200,232,.8)';b.style.border='1px solid rgba(255,255,255,.1)';});
+  btn.style.background='linear-gradient(135deg,#B8913A,#D4A84B)';btn.style.color='#fff';btn.style.border='none';
+  var lista=cat==='todos'?APQS:APQS.filter(function(p){return p.c===cat;});
+  var html='';
+  lista.forEach(function(p){html+='<div onclick="asesorPreguntar(\''+p.t.replace(/'/g,"\\'")+'\')\" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:9px 12px;font-size:12px;color:rgba(176,200,232,.9);cursor:pointer;line-height:1.4" onmouseover="this.style.background=\'rgba(201,151,63,.12)\';this.style.borderColor=\'rgba(201,151,63,.3)\'" onmouseout="this.style.background=\'rgba(255,255,255,.05)\';this.style.borderColor=\'rgba(255,255,255,.08)\'">'+p.t+'</div>';});
+  document.getElementById('asesor-pqs').innerHTML=html;
+}
+function asesorPreguntar(txt){document.getElementById('asesor-inp').value=txt;asesorTab('chat',document.getElementById('tab-chat'));asesorEnviar();}
+function asesorContratar(nombre,max){
+  if(confirm('Para activar el plan '+nombre+', pague por WhatsApp al 829-786-0922.\n\n¿Activar en modo demo?')){
+    aPlan=nombre;aPlanQ=max;aActualizarContador();
+    document.getElementById('asesor-planes').style.display='none';
+    asesorTab('chat',document.getElementById('tab-chat'));
+    asesorAgregarMsg('bot','✅ Plan <strong>'+nombre+'</strong> activado. '+(max===999?'Preguntas ilimitadas.':'<strong>'+max+' preguntas</strong> disponibles.')+' ¡Adelante!');
+  }
+}
+function aActualizarContador(){
+  var c=document.getElementById('asesor-contador'),b=document.getElementById('asesor-gratis-badge');
+  if(aPlan){c.textContent='✅ Plan '+aPlan+(aPlanQ===999?' · Ilimitado':' · '+aPlanQ+' restantes');c.style.color='#25D366';if(b)b.textContent='✅ Plan '+aPlan;}
+  else if(aGratis>0){c.textContent='⚡ '+aGratis+' pregunta'+(aGratis!==1?'s':'')+' gratis';c.style.color='rgba(201,151,63,.8)';if(b)b.textContent='🟢 '+aGratis+' preguntas gratis';}
+  else{c.textContent='⚠️ Preguntas agotadas — Elija un plan';c.style.color='rgba(239,68,68,.8)';}
+}
+function asesorAgregarMsg(tipo,html){
+  var chat=document.getElementById('asesor-chat'),empty=document.getElementById('asesor-empty');
+  if(empty)empty.style.display='none';
+  var div=document.createElement('div');
+  div.style.cssText='display:flex;gap:8px;align-items:flex-end;margin-bottom:10px;'+(tipo==='user'?'flex-direction:row-reverse':'');
+  div.innerHTML='<div style="width:30px;height:30px;border-radius:50%;background:'+(tipo==='bot'?'linear-gradient(135deg,#B8913A,#D4A84B)':'rgba(255,255,255,.1)')+';display:flex;align-items:center;justify-content:center;font-size:'+(tipo==='bot'?'11':'14')+'px;font-weight:700;color:#fff;flex-shrink:0">'+(tipo==='bot'?'RA':'👤')+'</div><div style="max-width:80%;padding:10px 14px;border-radius:16px;font-size:13px;line-height:1.65;background:'+(tipo==='bot'?'rgba(255,255,255,.07)':'linear-gradient(135deg,#C9973F,#A07828)')+';color:'+(tipo==='bot'?'rgba(230,240,255,.95)':'#fff')+';border:'+(tipo==='bot'?'1px solid rgba(255,255,255,.1)':'none')+';border-bottom-'+(tipo==='bot'?'left':'right')+'-radius:4px">'+html+'</div>';
+  chat.appendChild(div);chat.scrollTop=chat.scrollHeight;
+}
+function asesorEnviar(){
+  var inp=document.getElementById('asesor-inp'),txt=inp.value.trim();
+  if(!txt||aCargando)return;
+  if(!aPlan&&aGratis<=0){asesorAgregarMsg('bot','Sus <strong>5 preguntas gratuitas</strong> se agotaron. Elija un plan o escríbanos al <strong>📱 829-786-0922</strong>.');return;}
+  inp.value='';asesorTab('chat',document.getElementById('tab-chat'));asesorAgregarMsg('user',txt);
+  if(!aPlan)aGratis--;else if(aPlanQ!==999){aPlanQ--;if(aPlanQ<=0){aPlan=null;document.getElementById('asesor-planes').style.display='block';}}
+  aActualizarContador();aCargando=true;
+  var chat=document.getElementById('asesor-chat'),typing=document.createElement('div');
+  typing.id='asesor-typing';typing.style.cssText='display:flex;gap:8px;align-items:flex-end;margin-bottom:10px';
+  typing.innerHTML='<div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#B8913A,#D4A84B);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">RA</div><div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;border-bottom-left-radius:4px;padding:12px 16px;display:flex;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#C9973F;animation:abounce .9s infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:#C9973F;animation:abounce .9s .15s infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:#C9973F;animation:abounce .9s .3s infinite"></div></div>';
+  chat.appendChild(typing);chat.scrollTop=chat.scrollHeight;
+  setTimeout(function(){var t=document.getElementById('asesor-typing');if(t)t.remove();asesorAgregarMsg('bot',aBuscar(txt));aCargando=false;},1200);
+}
+asesorFiltrar('todos',document.querySelector('#asesor-cats button'));
+</script>
+<style>@keyframes abounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}</style>
 <!-- FAQ -->
 <section id="faq">
   <div class="container">
