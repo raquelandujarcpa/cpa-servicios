@@ -575,7 +575,7 @@ footer span{color:var(--dorado)}
               <div style="font-size:12px;font-weight:700;color:rgba(176,200,232,.9);margin-bottom:3px">Básico</div>
               <div style="font-size:18px;font-weight:700;color:#C9973F;margin-bottom:3px">RD$500</div>
               <div style="font-size:10px;color:rgba(176,200,232,.5);margin-bottom:8px">10 preguntas · 30 días</div>
-              <button onclick="asesorContratar('Básico',10)" style="width:100%;padding:6px;background:#C9973F;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Contratar →</button>
+              <button onclick="asesorContratar('Básico','RD$500')" style="width:100%;padding:6px;background:#C9973F;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Pagar por WhatsApp →</button>
             </div>
             <div style="background:linear-gradient(135deg,#C9973F,#A07828);border-radius:12px;padding:12px;text-align:center;position:relative">
               <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#fff;color:#C9973F;font-size:9px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap">MÁS POPULAR</div>
@@ -583,14 +583,14 @@ footer span{color:var(--dorado)}
               <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px">Profesional</div>
               <div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:3px">RD$1,500</div>
               <div style="font-size:10px;color:rgba(255,255,255,.8);margin-bottom:8px">Ilimitado · 30 días</div>
-              <button onclick="asesorContratar('Profesional',999)" style="width:100%;padding:6px;background:rgba(255,255,255,.25);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Contratar →</button>
+              <button onclick="asesorContratar('Profesional','RD$1,500')" style="width:100%;padding:6px;background:rgba(255,255,255,.25);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Pagar por WhatsApp →</button>
             </div>
             <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;text-align:center">
               <div style="font-size:18px;margin-bottom:6px">🏢</div>
               <div style="font-size:12px;font-weight:700;color:rgba(176,200,232,.9);margin-bottom:3px">Empresarial</div>
               <div style="font-size:18px;font-weight:700;color:#C9973F;margin-bottom:3px">RD$3,500</div>
               <div style="font-size:10px;color:rgba(176,200,232,.5);margin-bottom:8px">Ilimitado · 90 días</div>
-              <button onclick="asesorContratar('Empresarial',999)" style="width:100%;padding:6px;background:#C9973F;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Contratar →</button>
+              <button onclick="asesorContratar('Empresarial','RD$3,500')" style="width:100%;padding:6px;background:#C9973F;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Pagar por WhatsApp →</button>
             </div>
           </div>
           <div style="text-align:center;font-size:11px;color:rgba(176,200,232,.4);margin-top:8px">Pago por WhatsApp · 📱 829-786-0922</div>
@@ -686,12 +686,19 @@ function asesorFiltrar(cat,btn){
   document.getElementById('asesor-pqs').innerHTML=html;
 }
 function asesorPreguntar(txt){document.getElementById('asesor-inp').value=txt;asesorTab('chat',document.getElementById('tab-chat'));asesorEnviar();}
-function asesorContratar(nombre,max){
-  if(confirm('Para activar el plan '+nombre+', pague por WhatsApp al 829-786-0922.\n\n¿Activar en modo demo?')){
+function asesorContratar(nombre,precio){
+  var msg='Hola Lcda. Raquel, quiero contratar el plan '+nombre+' ('+precio+'). Por favor indíqueme cómo realizar el pago.';
+  window.open('https://wa.me/18297860922?text='+encodeURIComponent(msg),'_blank');
+}
+function asesorActivar(nombre,max,clave){
+  var c=prompt('Ingrese su clave de activación:');
+  if(c&&c.trim()===clave){
     aPlan=nombre;aPlanQ=max;aActualizarContador();
     document.getElementById('asesor-planes').style.display='none';
     asesorTab('chat',document.getElementById('tab-chat'));
     asesorAgregarMsg('bot','✅ Plan <strong>'+nombre+'</strong> activado. '+(max===999?'Preguntas ilimitadas.':'<strong>'+max+' preguntas</strong> disponibles.')+' ¡Adelante!');
+  } else if(c){
+    alert('Clave incorrecta. Contáctenos al 829-786-0922.');
   }
 }
 function aActualizarContador(){
